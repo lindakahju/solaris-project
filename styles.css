@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Monda&family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg');
+    color: white;
+    font-family: 'Gruppo';
+    font-size: 20px;
+}
+
+header {
+    text-align: center;
+    color: rgb(230, 227, 227);
+}
+
+header h2 {
+    color: #eb1;
+}
+
+/* SEARCH BOX */
+#search-container {
+    display: flex;
+    justify-content: center;
+}
+
+#search-box {
+    width: 200px;
+    height: 20px;
+}
+
+/* PLANETS */
+#planets-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+#planets-container button:hover {
+    transform: scale(1.1);
+}
+
+/* buttons appearing as planets */
+button {
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer; 
+    height: 40px;
+    transform: rotate(0deg);
+    animation: spin 400s linear infinite;
+    box-shadow: inset 0 0 20px rgba(20,20,20,0.7);
+}
+
+.solen {
+    background: url('https://www.solarsystemscope.com/textures/download/8k_sun.jpg');
+    width: 35rem;
+    height: 35rem;
+    margin-left: -350px;
+    box-shadow: 0 0 8rem #eb1;
+}
+
+.merkurius {
+    background: url('https://www.solarsystemscope.com/textures/download/2k_mercury.jpg');
+    width: 5rem;
+    height: 5rem;
+}
+
+.venus {
+    background: url('https://www.solarsystemscope.com/textures/download/2k_venus_surface.jpg') ;
+    width: 8rem;
+    height: 8rem;
+}
+
+.jorden {
+    background: url('https://web.cortland.edu/flteach/civ/davidweb/images/earthmab.jpg') ;
+    width: 9rem;
+    height: 9rem;
+}
+
+.mars {
+    background: url('http://hunter.pairsite.com/blogs/20090628/1245685450764032140.358121x.jpg');
+    width: 6rem;
+    height: 6rem;
+}
+  
+.jupiter {
+    background: url('https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg');
+    width: 12rem;
+    height: 12rem;
+}
+
+.saturnus {
+    background: url('https://www.solarsystemscope.com/textures/download/2k_saturn.jpg');
+    width: 10.5rem;
+    height: 10.5rem;
+}
+
+.uranus {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/9/95/Solarsystemscope_texture_2k_uranus.jpg');
+    width: 8rem;
+    height: 8rem;
+}
+
+.neptunus {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Solarsystemscope_texture_2k_neptune.jpg/1200px-Solarsystemscope_texture_2k_neptune.jpg?20201026210218');
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+/* lightbox with info of selected planet + navigation buttons*/
+.lightbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.lightbox-content h2, h3 {
+    margin: 2px;
+}
+  
+.lightbox-content {
+    font-family: 'Roboto';
+    font-size: 16px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+#planet.info {
+    max-width: 50%;
+    color: black;
+}
+
+.close-lightbox-button {
+    font-size: 80px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(26, 26, 26);
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-btn--prev, .pagination-btn--next {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(50%);
+    z-index: 1;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 5px;
+}
+  
+.pagination-btn--prev {
+    right: 50%;
+    transform: translate(-20%);
+}
+  
+.pagination-btn--next {
+    left: 50%;
+    transform: translate(50%);
+}
+
+
+/* ANIMATIONS */
+
+/* fade in effect for lightbox */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* rotating effect for the planets */
+@keyframes spin {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: -200% 0%;
+    }
+}
+
